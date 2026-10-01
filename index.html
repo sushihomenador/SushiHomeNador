@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sushi Home Nador — Commande & Livraison</title>
+<meta name="description" content="Sushi Home Nador — Box Sushi, Box Fry et livraison. Commandez directement sur WhatsApp.">
+<style>
+:root{--black:#111;--gold:#b68a42;--cream:#f8f5ef;--white:#fff;--gray:#6b6b6b;--line:#e9e5df}
+*{box-sizing:border-box}body{margin:0;color:var(--black);font-family:Inter,Arial,sans-serif;background:#fff}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}
+.container{width:min(1120px,92%);margin:auto}.top{background:#111;color:#fff;text-align:center;font-size:13px;padding:9px}
+header{position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(12px);z-index:30;border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:18px;font-weight:900;letter-spacing:1.5px}.brand i{font-style:normal;color:var(--gold)}
+.links{display:flex;gap:25px;font-size:14px;font-weight:700}.wa{background:#111;color:#fff;padding:12px 18px;border-radius:30px;font-weight:800}
+.hero{background:linear-gradient(120deg,#111 0%,#191919 52%,#806036 100%);color:white;padding:75px 0}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.kicker{color:#e5c78e;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(42px,7vw,74px);line-height:.95;margin:15px 0}.hero p{font-size:18px;line-height:1.65;color:#ddd;max-width:600px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:30px;padding:13px 21px;font-weight:900;cursor:pointer}.gold{background:var(--gold);color:#fff}.white{background:#fff;color:#111}.dark{background:#111;color:#fff}.outline{background:#fff;border:1px solid #ddd;color:#111}
+.heroActions{display:flex;gap:10px;flex-wrap:wrap}.heroVisual{height:370px;border-radius:32px;background:radial-gradient(circle at 30% 30%,#fff8 0 3%,transparent 4%),radial-gradient(circle at 70% 65%,#0006 0 15%,transparent 16%),linear-gradient(145deg,#eee,#c6a873);display:flex;align-items:flex-end;padding:22px;box-shadow:0 30px 70px #0006}.visualBadge{background:#111d;padding:16px;border-radius:18px;backdrop-filter:blur(8px)}
+section{padding:68px 0}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.head h2{font-size:34px;margin:0}.head p{margin:8px 0 0;color:var(--gray)}
+.categories{display:flex;gap:9px;overflow:auto;padding:2px 0 20px}.cat{white-space:nowrap;border:1px solid #ddd;background:#fff;padding:10px 17px;border-radius:30px;cursor:pointer;font-weight:800}.cat.active{background:#111;color:#fff;border-color:#111}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 15px 35px #0000000c}.pimg{height:185px;background:linear-gradient(135deg,#f1eee8,#d9d1c2);display:flex;align-items:center;justify-content:center;font-size:55px}.pbody{padding:16px}.pbody h3{margin:0 0 6px;font-size:17px}.desc{font-size:13px;color:var(--gray);min-height:37px}.price{font-size:20px;font-weight:900;margin:12px 0}.add{width:100%}
+.features{background:var(--cream)}.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.feature b{display:block;margin:10px 0 6px}.feature span{color:var(--gray);font-size:14px;line-height:1.5}
+.aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.aboutBox{background:#111;color:#fff;border-radius:28px;padding:35px}.aboutBox h2{font-size:36px;margin-top:0}.aboutBox p{color:#ccc;line-height:1.7}
+.cartPanel{position:fixed;right:18px;bottom:18px;z-index:40}.cartBtn{border:0;background:#111;color:#fff;padding:15px 20px;border-radius:35px;font-weight:900;box-shadow:0 15px 40px #0004;cursor:pointer}
+.drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.drawerBox{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;padding:25px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.cartItem{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.qty button{border:1px solid #ddd;background:#fff;border-radius:8px;width:30px;height:30px}.total{font-size:23px;font-weight:900;margin:18px 0}
+.form{display:grid;gap:10px;margin-top:15px}.form input,.form textarea,.form select{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;outline:none}.form textarea{min-height:80px;resize:vertical}
+footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.muted{color:#aaa}.mobileBar{display:none}
+@media(max-width:850px){.links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}.heroVisual{height:260px}.products{grid-template-columns:repeat(2,1fr)}.featureGrid{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.top{font-size:11px}.hero{padding:52px 0}.products{grid-template-columns:1fr}.featureGrid{grid-template-columns:1fr}.head{display:block}.heroActions .btn{width:100%}.mobileBar{display:block;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:10px;z-index:35}.mobileBar .btn{width:100%}.foot{grid-template-columns:1fr;padding-bottom:60px}}
+</style>
+</head>
+<body>
+<div class="top">🍣 SUSHI HOME NADOR — Commande & livraison à Nador</div>
+<header><div class="container nav">
+<a class="brand" href="#">SUSHI <i>HOME</i> NADOR</a>
+<nav class="links"><a href="#menu">Menu</a><a href="#experience">Notre expérience</a><a href="#livraison">Livraison</a><a href="#contact">Contact</a></nav>
+<a class="wa" href="https://wa.me/212788516625?text=Bonjour%20Sushi%20Home%20Nador%20%F0%9F%8D%A3">WhatsApp</a>
+</div></header>
+
+<section class="hero"><div class="container heroGrid">
+<div><div class="kicker">Fresh • Fry • Box • Delivery</div><h1>Votre sushi.<br>Votre maison.</h1>
+<p>Découvrez Sushi Home Nador : des box généreuses, préparées à la commande, avec une commande simple directement sur WhatsApp.</p>
+<div class="heroActions"><a class="btn gold" href="#menu">Découvrir le menu</a><a class="btn white" href="https://wa.me/212788516625?text=Bonjour%20Sushi%20Home%20Nador%2C%20je%20voudrais%20commander.">Commander maintenant</a></div>
+</div><div class="heroVisual"><div class="visualBadge"><b>🍱 Box Sushi & Fry</b><br><span>Préparé à la commande • Nador</span></div></div>
+</div></section>
+
+<section id="menu"><div class="container">
+<div class="head"><div><h2>Notre menu</h2><p>Choisissez votre box et ajoutez-la au panier.</p></div></div>
+<div class="categories"><button class="cat active" data-cat="all">Tout</button><button class="cat" data-cat="sushi">Box Sushi</button><button class="cat" data-cat="fry">Box Fry</button><button class="cat" data-cat="classic">Classiques</button><button class="cat" data-cat="drinks">Boissons</button></div>
+<div class="products" id="products"></div>
+</div></section>
+
+<section id="experience" class="features"><div class="container">
+<div class="head"><div><h2>L'expérience Sushi Home</h2><p>Simple, rapide et pensé pour la livraison.</p></div></div>
+<div class="featureGrid">
+<div class="feature">🍣<b>Préparé à la commande</b><span>Une préparation pensée pour garder la fraîcheur et la présentation.</span></div>
+<div class="feature">📦<b>Box généreuses</b><span>Des formats adaptés aux petites et grandes envies.</span></div>
+<div class="feature">📲<b>Commande WhatsApp</b><span>Votre commande est envoyée directement à notre équipe.</span></div>
+<div class="feature">🚴<b>Livraison Nador</b><span>Les détails de livraison sont confirmés avec vous sur WhatsApp.</span></div>
+</div></div></section>
+
+<section id="livraison"><div class="container aboutGrid">
+<div class="aboutBox"><h2>Commander en 3 étapes</h2><p><b>01 — Choisissez</b><br>Sélectionnez vos produits et quantités.</p><p><b>02 — Renseignez vos informations</b><br>Nom, téléphone, adresse et remarque.</p><p><b>03 — Envoyez sur WhatsApp</b><br>Nous recevons votre commande et confirmons la livraison.</p></div>
+<div><h2>Livraison à Nador</h2><p style="color:#666;line-height:1.7">Les frais de livraison et la zone exacte peuvent être confirmés avec notre équipe avant validation. Le total affiché dans le panier correspond au prix des produits.</p><a class="btn dark" href="https://wa.me/212788516625?text=Bonjour%2C%20je%20voudrais%20conna%C3%AEtre%20les%20frais%20de%20livraison.">Demander les frais de livraison</a></div>
+</div></section>
+
+<footer id="contact"><div class="container foot"><div><h2>Sushi Home Nador</h2><p class="muted">Sushi • Fry • Box • Livraison</p></div><div><b>WhatsApp</b><p class="muted">0788516625</p></div><div><b>Commande</b><p><a class="btn gold" href="https://wa.me/212788516625?text=Bonjour%20Sushi%20Home%20Nador%20%F0%9F%8D%A3">Commander</a></p></div></div></footer>
+
+<div class="cartPanel"><button class="cartBtn" onclick="openCart()">🛒 Panier <span id="count">0</span></button></div>
+<div class="mobileBar"><button class="btn dark" onclick="openCart()">🛒 Voir le panier <span id="count2">0</span></button></div>
+
+<div class="drawer" id="drawer"><div class="drawerBox"><button class="close" onclick="closeCart()">×</button><h2>Votre commande</h2><div id="cartItems"></div><div class="total">Total produits : <span id="total">0</span> DH</div>
+<div class="form"><input id="name" placeholder="Nom et prénom *"><input id="phone" placeholder="Téléphone *"><input id="address" placeholder="Adresse de livraison *"><select id="area"><option value="">Zone / quartier</option><option>Nador Centre</option><option>Corniche Nador</option><option>Hay Al Matar</option><option>Atalayoun</option><option>Autre</option></select><textarea id="note" placeholder="Remarque (facultatif)"></textarea>
+<button class="btn gold" onclick="sendOrder()">Envoyer la commande sur WhatsApp</button></div></div></div>
+
+<script>
+const WA='212788516625';
+const products=[
+{name:'Box Sushi 5 pièces',price:35,cat:'sushi',emoji:'🍣',desc:'5 pièces — format découverte'},
+{name:'Box Sushi 10 pièces',price:80,cat:'sushi',emoji:'🍣',desc:'10 pièces — pour une envie généreuse'},
+{name:'Box Sushi 15 pièces',price:109,cat:'sushi',emoji:'🍱',desc:'15 pièces — à partager'},
+{name:'Box Sushi 20 pièces',price:139,cat:'sushi',emoji:'🍱',desc:'20 pièces — grand format'},
+{name:'Box Sushi 30 pièces',price:219,cat:'sushi',emoji:'🍱',desc:'30 pièces — pour plusieurs personnes'},
+{name:'Box Fry 5 pièces',price:35,cat:'fry',emoji:'🔥',desc:'5 pièces — crispy'},
+{name:'Box Fry 10 pièces',price:80,cat:'fry',emoji:'🔥',desc:'10 pièces — crispy'},
+{name:'Box Fry 15 pièces',price:109,cat:'fry',emoji:'🔥',desc:'15 pièces — crispy'},
+{name:'Box Fry 20 pièces',price:139,cat:'fry',emoji:'🔥',desc:'20 pièces — crispy'},
+{name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',desc:'30 pièces — crispy'},
+{name:'Maki',price:25,cat:'classic',emoji:'🥢',desc:'Portion selon disponibilité'},
+{name:'California',price:35,cat:'classic',emoji:'🍣',desc:'California roll'},
+{name:'Eau',price:10,cat:'drinks',emoji:'💧',desc:'Eau minérale'},
+{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',desc:'Boisson fraîche'}
+];
+let cart=[];
+function render(cat='all'){
+document.getElementById('products').innerHTML=products.filter(p=>cat==='all'||p.cat===cat).map((p,i)=>`
+<article class="product"><div class="pimg">${p.emoji}</div><div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
+}
+function add(i){cart.push(products[i]);update();openCart()}
+function update(){
+document.getElementById('count').textContent=cart.length;document.getElementById('count2').textContent=cart.length;
+let total=cart.reduce((s,p)=>s+p.price,0);document.getElementById('total').textContent=total;
+document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartItem"><div><b>${p.name}</b><br><span>${p.price} DH</span></div><div class="qty"><button onclick="remove(${i})">−</button></div></div>`).join(''):'<p style="color:#777">Votre panier est vide.</p>';
+}
+function remove(i){cart.splice(i,1);update()}
+function openCart(){document.getElementById('drawer').classList.add('open');update()}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+function sendOrder(){
+if(!cart.length){alert('Ajoutez au moins un produit.');return}
+const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim(),area=document.getElementById('area').value,note=document.getElementById('note').value.trim();
+if(!name||!phone||!address){alert('Merci de remplir le nom, téléphone et adresse.');return}
+const total=cart.reduce((s,p)=>s+p.price,0);
+let msg=`Bonjour Sushi Home Nador 🍣\n\n*NOUVELLE COMMANDE*\n\n${cart.map((p,i)=>`${i+1}. ${p.name} — ${p.price} DH`).join('\n')}\n\n*Total produits : ${total} DH*\n\nNom : ${name}\nTéléphone : ${phone}\nAdresse : ${address}\nZone : ${area||'Non précisée'}\nRemarque : ${note||'Aucune'}\n\nMerci de confirmer la commande et les frais de livraison.`;
+location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+}
+document.querySelectorAll('.cat').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.cat)}));
+render();
+</script>
+</body></html>
