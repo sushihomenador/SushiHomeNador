@@ -15,7 +15,7 @@ header{position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(12px);z-i
 .hero{background:linear-gradient(120deg,#111 0%,#191919 52%,#806036 100%);color:white;padding:75px 0}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
 .kicker{color:#e5c78e;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(42px,7vw,74px);line-height:.95;margin:15px 0}.hero p{font-size:18px;line-height:1.65;color:#ddd;max-width:600px}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:30px;padding:13px 21px;font-weight:900;cursor:pointer}.gold{background:var(--gold);color:#fff}.white{background:#fff;color:#111}.dark{background:#111;color:#fff}.outline{background:#fff;border:1px solid #ddd;color:#111}
-.heroActions{display:flex;gap:10px;flex-wrap:wrap}.heroVisual{height:370px;position:relative;overflow:hidden;border-radius:32px;background:radial-gradient(circle at 30% 30%,#fff8 0 3%,transparent 4%),radial-gradient(circle at 70% 65%,#0006 0 15%,transparent 16%),linear-gradient(145deg,#eee,#c6a873);display:flex;align-items:flex-end;padding:22px;box-shadow:0 30px 70px #0006}.visualBadge{background:#111d;padding:16px;border-radius:18px;backdrop-filter:blur(8px)}
+.heroActions{display:flex;gap:10px;flex-wrap:wrap}.heroVisual{height:370px;position:relative;overflow:hidden;border-radius:32px;background:radial-gradient(circle at 30% 30%,#fff8 0 3%,transparent 4%),radial-gradient(circle at 70% 65%,#0006 0 15%,transparent 16%),linear-gradient(145deg,#eee,#c6a873);display:flex;align-items:flex-end;padding:8px 14px;box-shadow:0 30px 70px #0006}.visualBadge{background:#111d;padding:16px;border-radius:18px;backdrop-filter:blur(8px)}
 section{padding:68px 0}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.head h2{font-size:34px;margin:0}.head p{margin:8px 0 0;color:var(--gray)}
 .categories{display:flex;gap:9px;overflow:auto;padding:2px 0 20px}.cat{white-space:nowrap;border:1px solid #ddd;background:#fff;padding:10px 17px;border-radius:30px;cursor:pointer;font-weight:800}.cat.active{background:#111;color:#fff;border-color:#111}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 15px 35px #0000000c}.pimg{height:185px;background:linear-gradient(135deg,#f1eee8,#d9d1c2);display:flex;align-items:center;justify-content:center;font-size:55px}.pbody{padding:16px}.pbody h3{margin:0 0 6px;font-size:17px}.desc{font-size:13px;color:var(--gray);min-height:37px}.price{font-size:20px;font-weight:900;margin:12px 0}.add{width:100%}
@@ -26,7 +26,7 @@ section{padding:68px 0}.head{display:flex;justify-content:space-between;align-it
 .form{display:grid;gap:10px;margin-top:15px}.form input,.form textarea,.form select{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;outline:none}.form textarea{min-height:80px;resize:vertical}
 footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.muted{color:#aaa}.mobileBar{display:none}
 @media(max-width:850px){.links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}.heroVisual{height:260px}.products{grid-template-columns:repeat(2,1fr)}.featureGrid{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.top{font-size:11px}.hero{padding:52px 0}.products{grid-template-columns:1fr}.featureGrid{grid-template-columns:1fr}.head{display:block}.heroActions .btn{width:100%}.mobileBar{display:block;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:10px;z-index:35}.mobileBar .btn{width:100%}.foot{grid-template-columns:1fr;padding-bottom:60px}}
+@media(max-width:500px){.heroVisual{padding:8px 10px}.top{font-size:11px}.hero{padding:52px 0}.products{grid-template-columns:1fr}.featureGrid{grid-template-columns:1fr}.head{display:block}.heroActions .btn{width:100%}.mobileBar{display:block;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;padding:10px;z-index:35}.mobileBar .btn{width:100%}.foot{grid-template-columns:1fr;padding-bottom:60px}}
 
 .heroPhoto img,.heroPhoto video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.heroOverlay{position:absolute;inset:0;background:linear-gradient(180deg,#0001 20%,#000b 100%)}.heroPhoto .visualBadge{position:relative;z-index:2}.pimg{position:relative;height:210px;background:#eee;overflow:hidden}.pimg img{width:100%;height:100%;object-fit:cover;display:block}.pimg .imgTag{position:absolute;left:10px;top:10px;background:#111d;color:#fff;padding:6px 9px;border-radius:20px;font-size:11px;font-weight:800;backdrop-filter:blur(8px)}.promoGallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.promoGallery img{width:100%;height:320px;object-fit:cover;border-radius:20px;display:block}.gallery{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:14px}.gallery img{width:100%;height:240px;object-fit:cover;border-radius:22px;display:block}.gallery img:first-child{height:494px;grid-row:span 2}.photoNote{font-size:11px;color:#888;margin-top:12px}.trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.trust span{background:#ffffff14;border:1px solid #ffffff22;border-radius:30px;padding:8px 12px;font-size:12px}.promo{margin-top:24px;padding:18px 20px;border:1px solid #e5d2ae;background:linear-gradient(135deg,#fffaf0,#f7f0e3);border-radius:20px;display:flex;justify-content:space-between;gap:20px;align-items:center}.promo b{font-size:18px}.promo span{color:#666;font-size:13px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.quick a{padding:15px;border:1px solid var(--line);border-radius:16px;background:#fff;font-weight:800}.quick small{display:block;color:#777;margin-top:4px;font-weight:500}@media(max-width:700px){.promoGallery{grid-template-columns:1fr 1fr}.promoGallery img{height:230px}.gallery{grid-template-columns:1fr 1fr}.gallery img,.gallery img:first-child{height:190px;grid-row:auto}.gallery img:first-child{grid-column:span 2;height:250px}.quick{grid-template-columns:1fr}.promo{display:block}.promo .btn{margin-top:12px;width:100%}}
 </style>
@@ -47,7 +47,7 @@ footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-templat
 </div></section>
 
 <section id="menu"><div class="container">
-<div class="head"><div><h2>Notre menu</h2><p>Choisissez votre box et ajoutez-la au panier.</p></div></div>
+<div class="head"><div><h2>Notre menu</h2><p>Une photo par produit • choisissez votre box et ajoutez-la au panier.</p></div></div>
 <div class="categories"><button class="cat active" data-cat="all">Tout</button><button class="cat" data-cat="sushi">Box Sushi</button><button class="cat" data-cat="fry">Box Fry</button><button class="cat" data-cat="classic">Classiques</button><button class="cat" data-cat="drinks">Boissons</button></div>
 <div class="products" id="products"></div><p class="photoNote">💡 الأسعار المعروضة هي أسعار المنتجات فقط. مصاريف التوصيل يتم تأكيدها عبر WhatsApp.</p>
 </div></section>
@@ -62,15 +62,7 @@ footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-templat
 </div>
 <p class="photoNote">Photos fournies par Sushi Home Nador.</p></div></section>
 
-<section class="features"><div class="container"><div class="head"><div><h2>Nos offres en images</h2><p>Les promotions et box disponibles.</p></div></div>
-<div class="promoGallery">
-<img src="promo-fry10.jpg" alt="Box Fry 10 pièces" loading="lazy">
-<img src="promo-mix24.jpg" alt="Box Mix 24 pièces" loading="lazy">
-<img src="promo-mix30-old.jpg" alt="Box Mix 30 pièces" loading="lazy">
-<img src="promo-frymix24-old.jpg" alt="Box Fry Mix" loading="lazy">
-<img src="promo-sushi-sheet.jpg" alt="Box Sushi" loading="lazy">
-<img src="promo-sushi-sheet2.jpg" alt="Box Sushi" loading="lazy">
-</div></div></section>
+
 
 <section class="features"><div class="container"><div class="promo"><div><b>🍣 Offre découverte</b><br><span>Choisissez votre box et envoyez votre commande directement sur WhatsApp.</span></div><a class="btn gold" href="#menu">Voir les box</a></div><div class="quick"><a href="#menu">🍱 Box Sushi<small>À partir de 35 DH</small></a><a href="#menu">🔥 Box Fry<small>À partir de 35 DH</small></a><a href="https://wa.me/212788516625?text=Bonjour%20Sushi%20Home%20Nador%20%F0%9F%8D%A3">📲 WhatsApp<small>Commander directement</small></a></div></div></section>
 
@@ -106,20 +98,20 @@ fry:'fry10.jpg',
 drink:'promo-sushi-20.jpg'
 };
 const products=[
-{name:'Box Sushi 5 pièces',price:35,cat:'sushi',emoji:'🍣',img:'promo-sushi-20.jpg',desc:'5 pièces — format découverte'},
-{name:'Box Sushi 10 pièces',price:80,cat:'sushi',emoji:'🍣',img:'promo-sushi-20.jpg',desc:'10 pièces — généreuse'},
-{name:'Box Sushi 15 pièces',price:109,cat:'sushi',emoji:'🍱',img:'promo-sushi-20.jpg',desc:'15 pièces — à partager'},
+{name:'Box Sushi 5 pièces',price:35,cat:'sushi',emoji:'🍣',img:'sushi_mix20.jpg',desc:'5 pièces — format découverte'},
+{name:'Box Sushi 10 pièces',price:80,cat:'sushi',emoji:'🍣',img:'sushi_mix20.jpg',desc:'10 pièces — généreuse'},
+{name:'Box Sushi 15 pièces',price:109,cat:'sushi',emoji:'🍱',img:'sushi_mix20.jpg',desc:'15 pièces — à partager'},
 {name:'Box Sushi 20 pièces',price:139,cat:'sushi',emoji:'🍱',img:'promo-mix20.jpg',desc:'20 pièces — grand format'},
 {name:'Box Sushi 30 pièces',price:219,cat:'sushi',emoji:'🍱',img:'promo-mix-30.jpg',desc:'30 pièces — pour plusieurs personnes'},
 {name:'Box Fry 5 pièces',price:35,cat:'fry',emoji:'🔥',img:'promo-fry10.jpg',desc:'5 pièces — crispy'},
 {name:'Box Fry 10 pièces',price:80,cat:'fry',emoji:'🔥',img:'promo-fry10.jpg',desc:'10 pièces — crispy'},
 {name:'Box Fry 15 pièces',price:109,cat:'fry',emoji:'🔥',img:'promo-fry-15.jpg',desc:'15 pièces — crispy'},
-{name:'Box Fry 20 pièces',price:139,cat:'fry',emoji:'🔥',img:'promo-fry-40.jpg',desc:'20 pièces — crispy'},
-{name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',img:'promo-fry-40.jpg',desc:'30 pièces — crispy'},
+{name:'Box Fry 20 pièces',price:139,cat:'fry',emoji:'🔥',img:'fry15.jpg',desc:'20 pièces — crispy'},
+{name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',img:'fry15.jpg',desc:'30 pièces — crispy'},
 {name:'Maki',price:25,cat:'classic',emoji:'🥢',img:'sushi_mix20.jpg',desc:'Portion selon disponibilité'},
 {name:'California',price:35,cat:'classic',emoji:'🍣',img:'mix30.jpg',desc:'California roll'},
-{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:'contact.jpg',desc:'Eau minérale'},
-{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:'contact.jpg',desc:'Boisson fraîche'}
+{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:'logo-promo.jpg',desc:'Eau minérale'},
+{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:'logo-promo.jpg',desc:'Boisson fraîche'}
 ];
 let cart=[];
 function render(cat='all'){
