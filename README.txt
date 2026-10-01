@@ -1,6 +1,17 @@
-SUSHI HOME NADOR — V5
+SUSHI HOME NADOR – V6
 
-Version simplifiée pour GitHub Pages depuis iPhone.
-Tous les fichiers (index.html, images et hero.mp4) sont dans le même dossier.
+Version améliorée pour GitHub Pages depuis iPhone.
+Nouveautés :
+- Menu avec photos réelles pour les box
+- Panier avec quantités + / -
+- Total automatique
+- Formulaire client
+- Commande WhatsApp structurée
+- Frais de livraison confirmés avec le client sur WhatsApp
 
-Pour publier: envoyer tous les fichiers du dossier V5 dans la racine du dépôt GitHub SushiHomeNador.
+Pour publier depuis iPhone :
+1. Extraire ce ZIP.
+2. Ouvrir le dossier SushiHomeNador_V6.
+3. Sélectionner TOUS les fichiers.
+4. Les envoyer dans la racine du dépôt GitHub SushiHomeNador.
+5. Commit changes.

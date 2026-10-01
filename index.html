@@ -22,7 +22,7 @@ section{padding:68px 0}.head{display:flex;justify-content:space-between;align-it
 .features{background:var(--cream)}.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.feature b{display:block;margin:10px 0 6px}.feature span{color:var(--gray);font-size:14px;line-height:1.5}
 .aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.aboutBox{background:#111;color:#fff;border-radius:28px;padding:35px}.aboutBox h2{font-size:36px;margin-top:0}.aboutBox p{color:#ccc;line-height:1.7}
 .cartPanel{position:fixed;right:18px;bottom:18px;z-index:40}.cartBtn{border:0;background:#111;color:#fff;padding:15px 20px;border-radius:35px;font-weight:900;box-shadow:0 15px 40px #0004;cursor:pointer}
-.drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.drawerBox{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;padding:25px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.cartItem{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.qty button{border:1px solid #ddd;background:#fff;border-radius:8px;width:30px;height:30px}.total{font-size:23px;font-weight:900;margin:18px 0}
+.drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.drawerBox{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;padding:25px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.cartItem{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:5px}.qty button{border:1px solid #ddd;background:#fff;border-radius:8px;width:30px;height:30px;cursor:pointer;font-weight:900}.total{font-size:23px;font-weight:900;margin:18px 0}
 .form{display:grid;gap:10px;margin-top:15px}.form input,.form textarea,.form select{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;outline:none}.form textarea{min-height:80px;resize:vertical}
 footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.muted{color:#aaa}.mobileBar{display:none}
 @media(max-width:850px){.links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}.heroVisual{height:260px}.products{grid-template-columns:repeat(2,1fr)}.featureGrid{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
@@ -49,7 +49,7 @@ footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-templat
 <section id="menu"><div class="container">
 <div class="head"><div><h2>Notre menu</h2><p>Choisissez votre box et ajoutez-la au panier.</p></div></div>
 <div class="categories"><button class="cat active" data-cat="all">Tout</button><button class="cat" data-cat="sushi">Box Sushi</button><button class="cat" data-cat="fry">Box Fry</button><button class="cat" data-cat="classic">Classiques</button><button class="cat" data-cat="drinks">Boissons</button></div>
-<div class="products" id="products"></div>
+<div class="products" id="products"></div><p class="photoNote">💡 الأسعار المعروضة هي أسعار المنتجات فقط. مصاريف التوصيل يتم تأكيدها عبر WhatsApp.</p>
 </div></section>
 
 <section><div class="container"><div class="head"><div><h2>Nos vraies photos 📸</h2><p>Découvrez les box et créations Sushi Home Nador.</p></div></div>
@@ -106,42 +106,53 @@ fry:'fry10.jpg',
 drink:'promo-sushi-20.jpg'
 };
 const products=[
-{name:'Box Sushi 5 pièces',price:35,cat:'sushi',emoji:'🍣',img:IMG.box,desc:'5 pièces — format découverte'},
-{name:'Box Sushi 10 pièces',price:80,cat:'sushi',emoji:'🍣',img:IMG.box,desc:'10 pièces — pour une envie généreuse'},
-{name:'Box Sushi 15 pièces',price:109,cat:'sushi',emoji:'🍱',img:IMG.box,desc:'15 pièces — à partager'},
-{name:'Box Sushi 20 pièces',price:139,cat:'sushi',emoji:'🍱',img:IMG.box,desc:'20 pièces — grand format'},
-{name:'Box Sushi 30 pièces',price:219,cat:'sushi',emoji:'🍱',img:IMG.box,desc:'30 pièces — pour plusieurs personnes'},
-{name:'Box Fry 5 pièces',price:35,cat:'fry',emoji:'🔥',img:IMG.fry,desc:'5 pièces — crispy'},
-{name:'Box Fry 10 pièces',price:80,cat:'fry',emoji:'🔥',img:IMG.fry,desc:'10 pièces — crispy'},
-{name:'Box Fry 15 pièces',price:109,cat:'fry',emoji:'🔥',img:IMG.fry,desc:'15 pièces — crispy'},
-{name:'Box Fry 20 pièces',price:139,cat:'fry',emoji:'🔥',img:IMG.fry,desc:'20 pièces — crispy'},
-{name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',img:IMG.fry,desc:'30 pièces — crispy'},
-{name:'Maki',price:25,cat:'classic',emoji:'🥢',img:IMG.roll,desc:'Portion selon disponibilité'},
-{name:'California',price:35,cat:'classic',emoji:'🍣',img:IMG.roll,desc:'California roll'},
-{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:IMG.drink,desc:'Eau minérale'},
-{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:IMG.drink,desc:'Boisson fraîche'}
+{name:'Box Sushi 5 pièces',price:35,cat:'sushi',emoji:'🍣',img:'promo-sushi-20.jpg',desc:'5 pièces — format découverte'},
+{name:'Box Sushi 10 pièces',price:80,cat:'sushi',emoji:'🍣',img:'promo-sushi-20.jpg',desc:'10 pièces — généreuse'},
+{name:'Box Sushi 15 pièces',price:109,cat:'sushi',emoji:'🍱',img:'promo-sushi-20.jpg',desc:'15 pièces — à partager'},
+{name:'Box Sushi 20 pièces',price:139,cat:'sushi',emoji:'🍱',img:'promo-mix20.jpg',desc:'20 pièces — grand format'},
+{name:'Box Sushi 30 pièces',price:219,cat:'sushi',emoji:'🍱',img:'promo-mix-30.jpg',desc:'30 pièces — pour plusieurs personnes'},
+{name:'Box Fry 5 pièces',price:35,cat:'fry',emoji:'🔥',img:'promo-fry10.jpg',desc:'5 pièces — crispy'},
+{name:'Box Fry 10 pièces',price:80,cat:'fry',emoji:'🔥',img:'promo-fry10.jpg',desc:'10 pièces — crispy'},
+{name:'Box Fry 15 pièces',price:109,cat:'fry',emoji:'🔥',img:'promo-fry-15.jpg',desc:'15 pièces — crispy'},
+{name:'Box Fry 20 pièces',price:139,cat:'fry',emoji:'🔥',img:'promo-fry-40.jpg',desc:'20 pièces — crispy'},
+{name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',img:'promo-fry-40.jpg',desc:'30 pièces — crispy'},
+{name:'Maki',price:25,cat:'classic',emoji:'🥢',img:'sushi_mix20.jpg',desc:'Portion selon disponibilité'},
+{name:'California',price:35,cat:'classic',emoji:'🍣',img:'mix30.jpg',desc:'California roll'},
+{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:'contact.jpg',desc:'Eau minérale'},
+{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:'contact.jpg',desc:'Boisson fraîche'}
 ];
 let cart=[];
 function render(cat='all'){
 document.getElementById('products').innerHTML=products.filter(p=>cat==='all'||p.cat===cat).map((p,i)=>`
-<article class="product"><div class="pimg">${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span>`:p.emoji}</div><div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
+<article class="product"><div class="pimg"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span></div><div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
 }
-function add(i){cart.push(products[i]);update();openCart()}
+function add(i){
+ const found=cart.find(x=>x.i===i);
+ if(found) found.q++; else cart.push({i,q:1});
+ update();openCart();
+}
+function remove(i){
+ const item=cart[i];
+ if(!item)return;
+ if(item.q>1)item.q--;else cart.splice(i,1);
+ update();
+}
+function plus(i){cart[i].q++;update()}
 function update(){
-document.getElementById('count').textContent=cart.length;document.getElementById('count2').textContent=cart.length;
-let total=cart.reduce((s,p)=>s+p.price,0);document.getElementById('total').textContent=total;
-document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartItem"><div><b>${p.name}</b><br><span>${p.price} DH</span></div><div class="qty"><button onclick="remove(${i})">−</button></div></div>`).join(''):'<p style="color:#777">Votre panier est vide.</p>';
+ const count=cart.reduce((s,x)=>s+x.q,0);
+ const total=cart.reduce((s,x)=>s+products[x.i].price*x.q,0);
+ document.getElementById('count').textContent=count;document.getElementById('count2').textContent=count;document.getElementById('total').textContent=total;
+ document.getElementById('cartItems').innerHTML=cart.length?cart.map((x,i)=>{const p=products[x.i];return `<div class="cartItem"><div><b>${p.name}</b><br><span>${p.price} DH × ${x.q} = <strong>${p.price*x.q} DH</strong></span></div><div class="qty"><button onclick="remove(${i})">−</button><span style="display:inline-block;min-width:28px;text-align:center;font-weight:900">${x.q}</span><button onclick="plus(${i})">+</button></div></div>`}).join(''):'<p style="color:#777">Votre panier est vide.</p>';
 }
-function remove(i){cart.splice(i,1);update()}
 function openCart(){document.getElementById('drawer').classList.add('open');update()}
 function closeCart(){document.getElementById('drawer').classList.remove('open')}
 function sendOrder(){
-if(!cart.length){alert('Ajoutez au moins un produit.');return}
-const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim(),area=document.getElementById('area').value,note=document.getElementById('note').value.trim();
-if(!name||!phone||!address){alert('Merci de remplir le nom, téléphone et adresse.');return}
-const total=cart.reduce((s,p)=>s+p.price,0);
-let msg=`Bonjour Sushi Home Nador 🍣\n\n*NOUVELLE COMMANDE*\n\n${cart.map((p,i)=>`${i+1}. ${p.name} — ${p.price} DH`).join('\n')}\n\n*Total produits : ${total} DH*\n\nNom : ${name}\nTéléphone : ${phone}\nAdresse : ${address}\nZone : ${area||'Non précisée'}\nRemarque : ${note||'Aucune'}\n\nMerci de confirmer la commande et les frais de livraison.`;
-location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+ if(!cart.length){alert('Ajoutez au moins un produit.');return}
+ const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim(),area=document.getElementById('area').value,note=document.getElementById('note').value.trim();
+ if(!name||!phone||!address){alert('Merci de remplir le nom, téléphone et adresse.');return}
+ const total=cart.reduce((s,x)=>s+products[x.i].price*x.q,0);
+ let msg=`Bonjour Sushi Home Nador 🍣\n\n*NOUVELLE COMMANDE*\n\n${cart.map((x,i)=>`${i+1}. ${products[x.i].name} × ${x.q} — ${products[x.i].price*x.q} DH`).join('\\n')}\n\n*Total produits : ${total} DH*\n\nNom : ${name}\nTéléphone : ${phone}\nAdresse : ${address}\nZone : ${area||'Non précisée'}\nRemarque : ${note||'Aucune'}\n\nMerci de confirmer la commande et les frais de livraison.`;
+ location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
 }
 document.querySelectorAll('.cat').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.cat)}));
 render();
