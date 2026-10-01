@@ -21,7 +21,7 @@ section{padding:68px 0}.head{display:flex;justify-content:space-between;align-it
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 15px 35px #0000000c}.pimg{height:185px;background:linear-gradient(135deg,#f1eee8,#d9d1c2);display:flex;align-items:center;justify-content:center;font-size:55px}.pbody{padding:16px}.pbody h3{margin:0 0 6px;font-size:17px}.desc{font-size:13px;color:var(--gray);min-height:37px}.price{font-size:20px;font-weight:900;margin:12px 0}.add{width:100%}
 .features{background:var(--cream)}.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.feature b{display:block;margin:10px 0 6px}.feature span{color:var(--gray);font-size:14px;line-height:1.5}
 .aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.aboutBox{background:#111;color:#fff;border-radius:28px;padding:35px}.aboutBox h2{font-size:36px;margin-top:0}.aboutBox p{color:#ccc;line-height:1.7}
-.cartPanel{position:fixed;right:18px;bottom:18px;z-index:40}.cartBtn{border:0;background:#111;color:#fff;padding:15px 20px;border-radius:35px;font-weight:900;box-shadow:0 15px 40px #0004;cursor:pointer}
+.cartPanel{position:fixed;right:18px;bottom:18px;z-index:40}}.drinkIcon{height:190px;display:grid;place-items:center;background:linear-gradient(135deg,#fffdf8,#f4ead8);font-size:72px;border-radius:24px 24px 0 0}.cartBtn{border:0;background:var(--gold);color:#fff;padding:15px 20px;border-radius:35px;font-weight:900;box-shadow:0 15px 40px #0003;cursor:pointer}.mobileBar .btn{background:var(--gold)!important;color:#fff!important;border-color:var(--gold)!important}.cartBtn{border:0;background:#111;color:#fff;padding:15px 20px;border-radius:35px;font-weight:900;box-shadow:0 15px 40px #0004;cursor:pointer}
 .drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.drawerBox{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;padding:25px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;cursor:pointer}.cartItem{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:5px}.qty button{border:1px solid #ddd;background:#fff;border-radius:8px;width:30px;height:30px;cursor:pointer;font-weight:900}.total{font-size:23px;font-weight:900;margin:18px 0}
 .form{display:grid;gap:10px;margin-top:15px}.form input,.form textarea,.form select{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;outline:none}.form textarea{min-height:80px;resize:vertical}
 footer{background:#111;color:#fff;padding:45px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.muted{color:#aaa}.mobileBar{display:none}
@@ -110,13 +110,13 @@ const products=[
 {name:'Box Fry 30 pièces',price:219,cat:'fry',emoji:'🔥',img:'fry15.jpg',desc:'30 pièces — crispy'},
 {name:'Maki',price:25,cat:'classic',emoji:'🥢',img:'sushi_mix20.jpg',desc:'Portion selon disponibilité'},
 {name:'California',price:35,cat:'classic',emoji:'🍣',img:'mix30.jpg',desc:'California roll'},
-{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:'logo-promo.jpg',desc:'Eau minérale'},
-{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:'logo-promo.jpg',desc:'Boisson fraîche'}
+{name:'Eau',price:10,cat:'drinks',emoji:'💧',img:'',desc:'Eau minérale'},
+{name:'Coca / Sprite',price:15,cat:'drinks',emoji:'🥤',img:'',desc:'Boisson fraîche'}
 ];
 let cart=[];
 function render(cat='all'){
 document.getElementById('products').innerHTML=products.filter(p=>cat==='all'||p.cat===cat).map((p,i)=>`
-<article class="product"><div class="pimg"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span></div><div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
+<article class="product">${p.img ? `<div class="pimg"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span></div>` : `<div class="drinkIcon">${p.emoji}</div>`}<div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
 }
 function add(i){
  const found=cart.find(x=>x.i===i);
