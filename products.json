@@ -1,0 +1,152 @@
+[
+  {
+    "id": "sushi5",
+    "name": "Box Sushi 5 pièces",
+    "price": 35,
+    "cat": "sushi",
+    "emoji": "🍣",
+    "image": "box-sushi-5.jpg",
+    "description": "5 pièces • format découverte",
+    "available": true
+  },
+  {
+    "id": "sushi10",
+    "name": "Box Sushi 10 pièces",
+    "price": 80,
+    "cat": "sushi",
+    "emoji": "🍣",
+    "image": "box-sushi-10.jpg",
+    "description": "10 pièces • assortiment varié",
+    "available": true
+  },
+  {
+    "id": "sushi15",
+    "name": "Box Sushi 15 pièces",
+    "price": 109,
+    "cat": "sushi",
+    "emoji": "🍣",
+    "image": "box-sushi-15.jpg",
+    "description": "15 pièces • assortiment généreux",
+    "available": true
+  },
+  {
+    "id": "sushi20",
+    "name": "Box Sushi 20 pièces",
+    "price": 139,
+    "cat": "sushi",
+    "emoji": "🍱",
+    "image": "box-sushi-20.jpg",
+    "description": "20 pièces • grand assortiment à partager",
+    "available": true
+  },
+  {
+    "id": "sushi25",
+    "name": "Box Sushi 25 pièces",
+    "price": 185,
+    "cat": "sushi",
+    "emoji": "🍱",
+    "image": "box-sushi-25.jpg",
+    "description": "25 pièces • assortiment premium à partager",
+    "available": true
+  },
+  {
+    "id": "sushi30",
+    "name": "Box Sushi 30 pièces",
+    "price": 219,
+    "cat": "sushi",
+    "emoji": "🍱",
+    "image": "box-sushi-30.jpg",
+    "description": "30 pièces • grand assortiment pour plusieurs personnes",
+    "available": true
+  },
+  {
+    "id": "fry5",
+    "name": "Box Fry 5 pièces",
+    "price": 35,
+    "cat": "fry",
+    "emoji": "🔥",
+    "image": "",
+    "description": "5 pièces • crispy • format découverte",
+    "available": true
+  },
+  {
+    "id": "fry10",
+    "name": "Box Fry 10 pièces",
+    "price": 80,
+    "cat": "fry",
+    "emoji": "🔥",
+    "image": "",
+    "description": "10 pièces • crispy • assortiment généreux",
+    "available": true
+  },
+  {
+    "id": "fry15",
+    "name": "Box Fry 15 pièces",
+    "price": 109,
+    "cat": "fry",
+    "emoji": "🔥",
+    "image": "",
+    "description": "15 pièces • crispy • à partager",
+    "available": true
+  },
+  {
+    "id": "fry20",
+    "name": "Box Fry 20 pièces",
+    "price": 139,
+    "cat": "fry",
+    "emoji": "🔥",
+    "image": "",
+    "description": "20 pièces • crispy • grand format",
+    "available": true
+  },
+  {
+    "id": "fry30",
+    "name": "Box Fry 30 pièces",
+    "price": 219,
+    "cat": "fry",
+    "emoji": "🔥",
+    "image": "",
+    "description": "30 pièces • crispy • grand assortiment",
+    "available": true
+  },
+  {
+    "id": "maki",
+    "name": "Maki",
+    "price": 25,
+    "cat": "classic",
+    "emoji": "🥢",
+    "image": "sushi_mix20.jpg",
+    "description": "Portion selon disponibilité",
+    "available": true
+  },
+  {
+    "id": "california",
+    "name": "California",
+    "price": 35,
+    "cat": "classic",
+    "emoji": "🍣",
+    "image": "mix30.jpg",
+    "description": "California roll",
+    "available": true
+  },
+  {
+    "id": "eau",
+    "name": "Eau",
+    "price": 10,
+    "cat": "drinks",
+    "emoji": "💧",
+    "image": "",
+    "description": "Eau minérale",
+    "available": true
+  },
+  {
+    "id": "soda",
+    "name": "Coca / Sprite",
+    "price": 15,
+    "cat": "drinks",
+    "emoji": "🥤",
+    "image": "",
+    "description": "Boisson fraîche",
+    "available": true
+  }
+]
