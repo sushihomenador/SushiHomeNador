@@ -117,7 +117,7 @@ const products=[
 let cart=[];
 function render(cat='all'){
 document.getElementById('products').innerHTML=products.filter(p=>cat==='all'||p.cat===cat).map((p,i)=>`
-<article class="product">${p.sushi ? `<div class="pimg sushiSprite ${p.sushi}" aria-label="${p.name}"></div>` : p.fry ? `<div class="pimg frySprite ${p.fry}" aria-label="${p.name}"></div>` : p.img ? `<div class="pimg"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span></div>` : `<div class="drinkIcon">${p.emoji}</div>`}<div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
+<article class="product">${p.img ? `<div class="pimg"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="imgTag">Sushi Home</span></div>` : p.sushi ? `<div class="pimg sushiSprite ${p.sushi}" aria-label="${p.name}"></div>` : p.fry ? `<div class="pimg frySprite ${p.fry}" aria-label="${p.name}"></div>` : `<div class="drinkIcon">${p.emoji}</div>`}<div class="pbody"><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${p.price} DH</div><button class="btn dark add" onclick="add(${i})">Ajouter au panier</button></div></article>`).join('');
 }
 function add(i){
  const found=cart.find(x=>x.i===i);
