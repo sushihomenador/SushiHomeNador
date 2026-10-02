@@ -103,7 +103,7 @@ async function loadProducts(){
   const res=await fetch('products.json?v='+Date.now(),{cache:'no-store'});
   if(!res.ok) throw new Error('catalog unavailable');
   products=await res.json();
-  products=products.filter(p=>p && p.available!==false).map(p=>({...p,sushi:p.id&&p.id.startsWith('sushi')?p.id:'',fry:p.id&&p.id.startsWith('fry')?p.id:''}));
+  products=products.filter(p=>p && p.available!==false).map(p=>({...p,img:p.image||'',desc:p.description||'',sushi:p.id&&p.id.startsWith('sushi')?p.id:'',fry:p.id&&p.id.startsWith('fry')?p.id:''}));
   render();
  }catch(e){
   document.getElementById('products').innerHTML='<p style="grid-column:1/-1;color:#777">Le menu est temporairement indisponible. Réessayez dans quelques secondes.</p>';
